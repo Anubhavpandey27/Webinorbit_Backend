@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin("http://127.0.0.1:5500")
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
 
   private final AuthenticationService service;
-  @CrossOrigin("http://localhost:3000/")
+  @CrossOrigin("http://127.0.0.1:5500")
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
@@ -23,7 +23,7 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(service.register(request));
   }
-  @CrossOrigin("http://localhost:3000/")
+  @CrossOrigin("http://localhost:5500/")
   @PostMapping("/authenticate")
   public ResponseEntity<AuthenticationResponse> authenticate(
       @RequestBody AuthenticationRequest request
