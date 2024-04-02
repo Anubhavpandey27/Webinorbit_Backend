@@ -1,5 +1,8 @@
 package com.alibou.security.auth;
 
+import com.alibou.security.user.User;
+import com.alibou.security.user.UserController;
+import com.alibou.security.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("http://127.0.0.1:5500")
@@ -15,7 +19,8 @@ import java.io.IOException;
 public class AuthenticationController {
 
   private final AuthenticationService service;
-  @CrossOrigin("http://127.0.0.1:5500")
+  private final UserService servicee;
+
 
   @PostMapping("/register")
   public ResponseEntity<AuthenticationResponse> register(
@@ -23,12 +28,17 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(service.register(request));
   }
-  @CrossOrigin("http://localhost:5500/")
   @PostMapping("/authenticate")
   public ResponseEntity<AuthenticationResponse> authenticate(
       @RequestBody AuthenticationRequest request
   ) {
     return ResponseEntity.ok(service.authenticate(request));
+  }
+  @CrossOrigin("http://127.0.0.1:5500")
+  @GetMapping("/{email}")
+  public ResponseEntity<Optional<User>> findByEmail(@PathVariable String email) {
+
+    return ResponseEntity.ok(servicee.getUserByEmail(email));
   }
 
   @PostMapping("/refresh-token")

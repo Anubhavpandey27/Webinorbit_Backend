@@ -1,6 +1,7 @@
 package com.alibou.security.user;
 
 import com.alibou.security.token.Token;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -23,6 +24,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+
 @Table(name = "_user")
 public class User implements UserDetails {
 
@@ -33,12 +35,10 @@ public class User implements UserDetails {
   private String lastname;
   private String email;
   private String password;
-  private String projects;
-  private String image;
 
   @Enumerated(EnumType.STRING)
   private Role role;
-
+  @JsonIgnore
   @OneToMany(mappedBy = "user")
   private List<Token> tokens;
 
