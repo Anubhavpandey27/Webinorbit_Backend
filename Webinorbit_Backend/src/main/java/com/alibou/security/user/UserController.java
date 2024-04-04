@@ -24,6 +24,12 @@ public class UserController {
         service.changePassword(request, connectedUser);
         return ResponseEntity.ok().build();
     }
+    @CrossOrigin("http://127.0.0.1:5500")
+    @GetMapping("/{email}")
+    public ResponseEntity<Optional<User>> findByEmail(@PathVariable String email) {
+
+        return ResponseEntity.ok(service.getUserByEmail(email));
+    }
 
 
 }
