@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://127.0.0.1:5500")
+@CrossOrigin("http://127.0.0.1:5501")
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
@@ -34,12 +34,7 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(service.authenticate(request));
   }
-  @CrossOrigin("http://127.0.0.1:5500")
-  @GetMapping("/{email}")
-  public ResponseEntity<Optional<User>> findByEmail(@PathVariable String email) {
 
-    return ResponseEntity.ok(servicee.getUserByEmail(email));
-  }
 
   @PostMapping("/refresh-token")
   public void refreshToken(

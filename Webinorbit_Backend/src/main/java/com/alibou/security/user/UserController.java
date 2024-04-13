@@ -9,7 +9,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://127.0.0.1:3000")
+@CrossOrigin("http://127.0.0.1:5501")
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
@@ -23,6 +23,12 @@ public class UserController {
     ) {
         service.changePassword(request, connectedUser);
         return ResponseEntity.ok().build();
+    }
+    @CrossOrigin("http://127.0.0.1:5501")
+    @GetMapping("/{email}")
+    public ResponseEntity<Optional<User>> findByEmail(@PathVariable String email) {
+
+        return ResponseEntity.ok(service.getUserByEmail(email));
     }
 
 
