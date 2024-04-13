@@ -39,6 +39,9 @@ public class User implements UserDetails {
   private String password;
   private String image;
   private String college;
+  private String skills;
+  private  int projects;
+  private String rating;
   private String position;
 
   @Enumerated(EnumType.STRING)
