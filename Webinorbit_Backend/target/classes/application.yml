@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/webinorbit
-    username: postgres
-    password: 12345678
+    url: postgresql://webinorbit_user:BycBqJTjC9FJlzvust5FiyM4A0FjeMXP@dpg-cofc2qv109ks73dbpe70-a/webinorbit
+    username: webinorbit_user
+    password: BycBqJTjC9FJlzvust5FiyM4A0FjeMXP
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: postgres://webinorbit_user:BycBqJTjC9FJlzvust5FiyM4A0FjeMXP@dpg-cofc2qv109ks73dbpe70-a/webinorbit
+    url: postgresql://webinorbit_user:BycBqJTjC9FJlzvust5FiyM4A0FjeMXP@dpg-cofc2qv109ks73dbpe70-a/webinorbit
     username: webinorbit_user
     password: BycBqJTjC9FJlzvust5FiyM4A0FjeMXP
     driver-class-name: org.postgresql.Driver
