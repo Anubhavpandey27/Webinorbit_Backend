@@ -1,9 +1,27 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+  ssl:
+    enabled: false
+    enabled-protocols: TLSv1.2
+  servlet:
+    session:
+      cookie:
+        secure: true
+        http-only: true
+  tomcat:
+    accesslog:
+      request-attributes-enabled: true
 spring:
   datasource:
-    url: postgresql://webinorbit_user:BycBqJTjC9FJlzvust5FiyM4A0FjeMXP@dpg-cofc2qv109ks73dbpe70-a/webinorbit
     username: webinorbit_user
     password: BycBqJTjC9FJlzvust5FiyM4A0FjeMXP
     driver-class-name: org.postgresql.Driver
+    hikari:
+      jdbc-url: jdbc:postgresql://dpg-cofc2qv109ks73dbpe70-a.singapore-postgres.render.com/webinorbit
+
+    url: jdbc:postgresql://dpg-cofc2qv109ks73dbpe70-a.singapore-postgres.render.com/webinorbit
   jpa:
     hibernate:
       ddl-auto: create-drop
