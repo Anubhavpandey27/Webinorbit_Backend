@@ -9,7 +9,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://127.0.0.1:5501")
+@CrossOrigin("https://testwebinorbit-146645.netlify.app/")
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
@@ -24,7 +24,7 @@ public class UserController {
         service.changePassword(request, connectedUser);
         return ResponseEntity.ok().build();
     }
-    @CrossOrigin("http://127.0.0.1:5501")
+    @CrossOrigin("https://testwebinorbit-146645.netlify.app/")
     @GetMapping("/{email}")
     public ResponseEntity<Optional<User>> findByEmail(@PathVariable String email) {
 

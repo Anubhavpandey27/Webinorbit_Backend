@@ -24,7 +24,7 @@ spring:
     url: jdbc:postgresql://dpg-cofc2qv109ks73dbpe70-a.singapore-postgres.render.com/webinorbit
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: false
     properties:
       hibernate:
