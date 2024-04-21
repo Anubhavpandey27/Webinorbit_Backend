@@ -26,9 +26,20 @@ public class UserController {
     }
     @CrossOrigin("https://testwebinorbit-146645.netlify.app/")
     @GetMapping("/{email}")
-    public ResponseEntity<Optional<User>> findByEmail(@PathVariable String email) {
+    public ResponseEntity<ProfileResponse> findByEmail(@PathVariable String email) {
+        Optional<User> user=service.getUserByEmail(email);
+        User user1=user.get();
+        var response= ProfileResponse.builder()
+                .firstname(user1.getFirstname())
+                .lastname(user1.getLastname())
+                .skils(user1.getSkills())
+                .projects(user1.getProjects())
+                .position(user1.getPosition())
+                .image(user1.getImage())
+                .college(user1.getCollege())
+                .build();
 
-        return ResponseEntity.ok(service.getUserByEmail(email));
+        return ResponseEntity.ok(response);
     }
 
 
