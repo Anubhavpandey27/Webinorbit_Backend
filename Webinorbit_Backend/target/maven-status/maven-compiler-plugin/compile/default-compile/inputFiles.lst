@@ -4,9 +4,11 @@ E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\al
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\demo\DemoController.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\auth\AuthenticationService.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\book\BookService.java
+E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\user\ProfileRequest.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\book\Book.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\user\Role.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\auditing\ApplicationAuditAware.java
+E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\user\Test.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\user\Permission.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\auth\AuthenticationController.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\token\Token.java
@@ -35,3 +37,4 @@ E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\al
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\demo\AdminController.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\project\ProjectRepository.java
 E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\token\TokenRepository.java
+E:\projects\website 1\Webinorbit_Backend\Webinorbit_Backend\src\main\java\com\alibou\security\user\ProfileResponse.java
