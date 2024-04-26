@@ -57,6 +57,7 @@ public class UserController {
         Optional<User> user=service.getUserByEmail(s1);
         User user1=user.get();
         var response= ProfileResponse.builder()
+                .email(user1.getEmail())
                 .firstname(user1.getFirstname())
                 .lastname(user1.getLastname())
                 .skils(user1.getSkills())

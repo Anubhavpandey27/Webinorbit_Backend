@@ -17,4 +17,10 @@ public class RegisterRequest {
   private String email;
   private String password;
   private Role role;
+  private String college;
+  private String skills;
+  private String position;
+  private float rating;
+  private  String image;
+  private int projects;
 }
