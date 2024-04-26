@@ -46,7 +46,7 @@ public class UserController {
 
         return ResponseEntity.ok(response);
     }
-    @GetMapping("/test")
+    @PostMapping("/test")
     public ResponseEntity<ProfileResponse> use(
             @RequestBody Test request
     ) {
