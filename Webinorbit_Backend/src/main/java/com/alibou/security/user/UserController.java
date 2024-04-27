@@ -15,7 +15,6 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("https://webinorbit.netlify.app/")
-
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
@@ -48,7 +47,7 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
     @CrossOrigin("https://webinorbit.netlify.app/")
-    @PostMapping("/test")
+    @GetMapping("/test")
     public ResponseEntity<ProfileResponse> use(
             @RequestBody Test request
     ) {
