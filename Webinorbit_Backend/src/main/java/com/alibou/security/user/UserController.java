@@ -14,7 +14,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "https://webinorbit.netlify.app/")
+@CrossOrigin(origins = "https://webinorbitfinalrun2.netlify.app/")
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
