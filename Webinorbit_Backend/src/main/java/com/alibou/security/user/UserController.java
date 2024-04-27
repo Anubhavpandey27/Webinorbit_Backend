@@ -14,7 +14,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("https://webinorbit.netlify.app/")
+@CrossOrigin(origins = "https://webinorbit.netlify.app/")
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
@@ -29,7 +29,7 @@ public class UserController {
         service.changePassword(request, connectedUser);
         return ResponseEntity.ok().build();
     }
-    @CrossOrigin("https://webinorbit.netlify.app/")
+
     @GetMapping("/prof/{email}")
     public ResponseEntity<ProfileResponse> findByEmail(@PathVariable String email) {
         Optional<User> user=service.getUserByEmail(email);
@@ -46,7 +46,7 @@ public class UserController {
 
         return ResponseEntity.ok(response);
     }
-    @CrossOrigin("https://webinorbit.netlify.app/")
+
     @GetMapping("/test")
     public ResponseEntity<ProfileResponse> use(
             @RequestBody Test request
