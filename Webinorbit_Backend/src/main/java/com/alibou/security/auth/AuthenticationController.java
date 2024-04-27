@@ -34,7 +34,7 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(service.authenticate(request));
   }
-  @GetMapping("/test")
+  @PostMapping("/test")
   public ResponseEntity<ProfileResponse> use(
           @RequestBody Test request
   ) {
