@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("https://webinorbitfinalrun2.netlify.app/")
+@CrossOrigin("https://webinorbit.com/")
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
