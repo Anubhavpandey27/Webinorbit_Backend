@@ -41,7 +41,7 @@ public class User implements UserDetails {
   private String college;
   private String skills;
   private  int projects;
-  private String rating;
+  private float rating;
   private String position;
 
   @Enumerated(EnumType.STRING)

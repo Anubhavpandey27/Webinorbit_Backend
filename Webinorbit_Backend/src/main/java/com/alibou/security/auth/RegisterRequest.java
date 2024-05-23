@@ -21,6 +21,6 @@ public class RegisterRequest {
   private String skills;
   private String position;
   private float rating;
-  private  String image;
+  private String image;
   private int projects;
 }

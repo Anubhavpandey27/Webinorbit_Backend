@@ -15,7 +15,7 @@ public class ProfileResponse {
     String email;
     String firstname;
     String lastname;
-    String skils;
+    String skills;
     String college;
     String position;
     int projects;
