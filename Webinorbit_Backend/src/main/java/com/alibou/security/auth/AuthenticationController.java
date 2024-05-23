@@ -49,6 +49,7 @@ public class AuthenticationController {
             .firstname(user1.getFirstname())
             .lastname(user1.getLastname())
             .skills(user1.getSkills())
+            .rating(user1.getRating())
             .projects(user1.getProjects())
             .position(user1.getPosition())
             .image(user1.getImage())
