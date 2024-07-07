@@ -15,13 +15,13 @@ server:
       request-attributes-enabled: true
 spring:
   datasource:
-    username: usernmae
-    password: password
+    username: postgres
+    password: 12345678
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: url
+      jdbc-url: jdbc:postgresql://localhost:5432/webinorbit
 
-    url: url
+    url: jdbc:postgresql://localhost:5432/webinorbit
   jpa:
     hibernate:
       ddl-auto: update
