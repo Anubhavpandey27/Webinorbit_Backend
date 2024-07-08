@@ -19,7 +19,7 @@ spring:
     password: password
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: url
+      jdbc-url: urll
     url: url
   jpa:
     hibernate:
