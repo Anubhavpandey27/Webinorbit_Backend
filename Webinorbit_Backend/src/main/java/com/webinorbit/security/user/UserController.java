@@ -9,7 +9,7 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://127.0.0.1:5502/")
+@CrossOrigin("https://webinorbit.com/")
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
