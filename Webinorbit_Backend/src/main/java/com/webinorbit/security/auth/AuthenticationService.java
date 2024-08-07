@@ -38,6 +38,7 @@ public class AuthenticationService {
             .image(request.getImage())
             .position(request.getPosition())
         .email(request.getEmail())
+            .status(false)
         .password(passwordEncoder.encode(request.getPassword()))
         .role(request.getRole())
         .build();
