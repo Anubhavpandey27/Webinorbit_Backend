@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 5500
   error:
     include-message: always
   ssl:
@@ -15,12 +15,12 @@ server:
       request-attributes-enabled: true
 spring:
   datasource:
-    username: arceus
-    password: abcdefgh
+    username: postgres
+    password: Airforce@123
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: jdbc:postgresql://database-1.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
-    url: jdbc:postgresql://database-1.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
+      jdbc-url: jdbc:postgresql://localhost:8080/abc
+    url: jdbc:postgresql://localhost:8080/abc
   jpa:
     hibernate:
       ddl-auto: update
