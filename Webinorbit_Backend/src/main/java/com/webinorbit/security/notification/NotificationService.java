@@ -4,8 +4,10 @@ import com.webinorbit.security.user.User;
 import com.webinorbit.security.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 @RequiredArgsConstructor
@@ -14,15 +16,17 @@ public class NotificationService {
     private final NotificationRepository notificationRepository;
     private final UserRepository userRepository;
 
-    public void sendNotificationToUser(String message, User user) {
-        Notification notification1 = new Notification();
-        notification1.setMessage(message);
-        notification1.setUser(user);
-        notification1.setCreatedAt(LocalDateTime.now());
-        notification1.setRead(false);
-        notificationRepository.save(notification1);
+    // AtomicLong for generating unique IDs manually
+    private final AtomicLong counter = new AtomicLong(1);
 
-       // notificationRepository.save(notification1);
+    public void sendNotificationToUser(String message, User user) {
+        Notification notification = new Notification();
+        notification.setId(counter.getAndIncrement()); // Manually assign a unique ID
+        notification.setMessage(message);
+        notification.setUser(user);
+        notification.setCreatedAt(LocalDateTime.now());
+        notification.setRead(false);
+        notificationRepository.save(notification);
     }
 
     public void sendNotificationToAllUsers(String message) {
