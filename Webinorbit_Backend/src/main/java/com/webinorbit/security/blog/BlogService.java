@@ -11,7 +11,7 @@ public class BlogService {
 
     private final BlogRepository repository;
 
-    public void save(BlogRequest request) {
+    public Blog save(BlogRequest request) {
         var book = Blog.builder()
                 .title(request.getTitle())
                 .image(request.getImage())
@@ -25,22 +25,46 @@ public class BlogService {
                 .section_content(request.getSection_content())
                 .section_title(request.getSection_title())
                 .build();
-        repository.save(book);
+        return repository.save(book);
     }
 
+    // Find all blogs
     public List<Blog> findAll() {
         return repository.findAll();
     }
-    public Blog findById(int id){
-        Blog ans = new Blog();
-        List<Blog> All=findAll();
-        for (Blog blog : All) {
-            if (blog.getId() == id) {
-                ans=blog;
-                return blog;
-            }
-        }
-        return ans;
+
+    // Find a blog by ID
+    public Blog findById(Integer id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new BlogNotFoundException("Blog not found with id " + id));
     }
 
+
+   // Update an existing blog
+    public Blog update(Integer id, BlogRequest request) {
+        Blog existingBlog = findById(id);
+        existingBlog.setTitle(request.getTitle());
+        existingBlog.setImage(request.getImage());
+        existingBlog.setDescription(request.getDescription());
+        existingBlog.setReadtime(request.getReadtime());
+        existingBlog.setAuthor(request.getAuthor());
+        existingBlog.setAuthorimage(request.getAuthorimage());
+        existingBlog.setDate(request.getDate());
+        existingBlog.setTags(request.getTags());
+        existingBlog.setCategory(request.getCategory());
+        existingBlog.setSection_title(request.getSection_title());
+        existingBlog.setSection_content(request.getSection_content());
+        return repository.save(existingBlog);
+    }
+
+    // Delete a blog by ID
+    public void deleteById(Integer id) {
+        if (!repository.existsById(id)) {
+            throw new BlogNotFoundException("Blog not found with id " + id);
+        }
+        repository.deleteById(id);
+    }
+
+
 }
+
