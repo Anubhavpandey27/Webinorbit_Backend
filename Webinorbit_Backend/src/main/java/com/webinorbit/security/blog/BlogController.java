@@ -14,7 +14,7 @@ public class BlogController {
 
     private final BlogService service;
     // Create a new blog post
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Blog> createBlog(@Valid @RequestBody BlogRequest request) {
         Blog createdBlog = service.save(request);
         return ResponseEntity.ok(createdBlog);
@@ -50,17 +50,12 @@ public class BlogController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<?> save(
             @RequestBody BlogRequest request
     ) {
         service.save(request);
         return ResponseEntity.accepted().build();
-    }
-
-    @GetMapping
-    public ResponseEntity<List<Blog>> findAllBooks() {
-        return ResponseEntity.ok(service.findAll());
     }
 
 
