@@ -12,13 +12,13 @@ public class BlogRequest {
     private String title;
     private String image;
     private String description;
-    private  int readtime;
+    private Integer readTime; // Changed from readtime
     private String author;
-    private String authorimage;
+    private String authorImage; // Changed from authorimage
     private String date;
     private String tags;
-    private  String category;
-    private String section_title;
-    private String section_content;
-
+    private String category;
+    private String sectionTitle; // Changed from section_title
+    private String sectionContent; // Changed from section_content
 }
+

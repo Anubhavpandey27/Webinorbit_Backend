@@ -50,15 +50,37 @@ public class BlogController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/save")
-    public ResponseEntity<?> save(
-            @RequestBody BlogRequest request
-    ) {
-        service.save(request);
-        return ResponseEntity.accepted().build();
+
+    // Add a section to a blog post
+    @PostMapping("/{id}/sections")
+    public ResponseEntity<Section> addSectionToBlog(
+            @PathVariable Integer id,
+            @RequestBody SectionRequest request) {
+        Section section = service.addSectionToBlog(id, request);
+        return ResponseEntity.ok(section);
     }
 
+    // Get all sections of a blog post
+    @GetMapping("/{id}/sections")
+    public ResponseEntity<List<Section>> getSectionsByBlogId(@PathVariable Integer id) {
+        List<Section> sections = service.findSectionsByBlogId(id);
+        return ResponseEntity.ok(sections);
+    }
 
+    // Update a section of a blog post
+    @PutMapping("/sections/{sectionId}")
+    public ResponseEntity<Section> updateSection(
+            @PathVariable Integer sectionId,
+            @RequestBody SectionRequest request) {
+        Section section = service.updateSection(sectionId, request);
+        return ResponseEntity.ok(section);
+    }
 
+    // Delete a section of a blog post
+    @DeleteMapping("/sections/{sectionId}")
+    public ResponseEntity<Void> deleteSection(@PathVariable Integer sectionId) {
+        service.deleteSection(sectionId);
+        return ResponseEntity.noContent().build();
+    }
 
 }
