@@ -1,24 +1,18 @@
 package com.webinorbit.security.blog;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@Builder
+@Data
 public class BlogRequest {
-
     private String title;
     private String image;
     private String description;
-    private Integer readTime; // Changed from readtime
+    private Integer read_time;
     private String author;
-    private String authorImage; // Changed from authorimage
+    private String author_image;
     private String date;
     private String tags;
     private String category;
-    private String sectionTitle; // Changed from section_title
-    private String sectionContent; // Changed from section_content
+    private String section_title;
+    private String section_content;
 }
-

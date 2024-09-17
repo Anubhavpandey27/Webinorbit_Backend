@@ -22,16 +22,16 @@ public class Blog {
     private String title;
     private String image;
     private String description;
-    private Integer readTime; // Changed to Integer
+    private Integer read_time; // Changed to Integer
 
-    // Changed from readtime
+
     private String author;
-    private String authorImage; // Changed from authorimage
+    private String author_image;
     private String date;
     private String tags;
     private String category;
 
     // One blog can have multiple sections
-    @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Section> sections;
 }

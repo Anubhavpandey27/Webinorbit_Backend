@@ -18,9 +18,9 @@ public class BlogService {
                 .title(request.getTitle())
                 .image(request.getImage())
                 .description(request.getDescription())
-                .readTime(request.getReadTime() != null ? request.getReadTime() : 0)
+                .read_time(request.getRead_time() != null ? request.getRead_time() : 0)
                 .author(request.getAuthor())
-                .authorImage(request.getAuthorImage())
+                .author_image(request.getAuthor_image())
                 .date(request.getDate())
                 .tags(request.getTags())
                 .category(request.getCategory())
@@ -38,18 +38,19 @@ public class BlogService {
     public Blog findById(Integer id) {
         return blogRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Blog", id));
+
     }
 
 
-   // Update an existing blog
+    // Update an existing blog
     public Blog update(Integer id, BlogRequest request) {
         Blog existingBlog = findById(id);
         existingBlog.setTitle(request.getTitle());
         existingBlog.setImage(request.getImage());
         existingBlog.setDescription(request.getDescription());
-        existingBlog.setReadTime(request.getReadTime());
+        existingBlog.setRead_time(request.getRead_time());
         existingBlog.setAuthor(request.getAuthor());
-        existingBlog.setAuthorImage(request.getAuthorImage());
+        existingBlog.setAuthor_image(request.getAuthor_image());
         existingBlog.setDate(request.getDate());
         existingBlog.setTags(request.getTags());
         existingBlog.setCategory(request.getCategory());
@@ -67,8 +68,8 @@ public class BlogService {
     public Section addSectionToBlog(int blogId, SectionRequest request) {
         Blog blog = findById(blogId);
         Section section = Section.builder()
-                .sectionTitle(request.getSectionTitle())
-                .sectionContent(request.getSectionContent())
+                .section_title(request.getSection_title())
+                .section_content(request.getSection_content())
                 .blog(blog)
                 .build();
         return sectionRepository.save(section);
@@ -81,8 +82,8 @@ public class BlogService {
     public Section updateSection(int sectionId, SectionRequest request) {
         Section section = sectionRepository.findById(sectionId)
                 .orElseThrow(() -> new ResourceNotFoundException("Section", sectionId));
-        section.setSectionTitle(request.getSectionTitle());
-        section.setSectionTitle(request.getSectionContent());
+        section.setSection_title(request.getSection_title());
+        section.setSection_content(request.getSection_content());
         return sectionRepository.save(section);
     }
 
@@ -92,4 +93,3 @@ public class BlogService {
 
 
 }
-

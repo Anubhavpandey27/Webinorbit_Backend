@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SectionRequest {
-    private String sectionTitle; // Changed from section_title
-    private String sectionContent; // Changed from section_content
+    private String section_title; // Changed from section_title
+    private String section_content; // Changed from section_content
 }
 
