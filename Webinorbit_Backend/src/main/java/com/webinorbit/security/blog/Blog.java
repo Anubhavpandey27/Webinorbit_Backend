@@ -22,7 +22,7 @@ public class Blog {
     private String title;
     private String image;
     private String description;
-    private Integer read_time; // Changed to Integer
+    private Integer read_time;
 
 
     private String author;
