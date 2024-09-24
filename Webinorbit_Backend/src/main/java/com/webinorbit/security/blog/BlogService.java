@@ -10,37 +10,86 @@ import java.util.List;
 public class BlogService {
 
     private final BlogRepository repository;
+    private final BlogRepository blogRepository;
+    private final SectionRepository sectionRepository;
 
-    public void save(BlogRequest request) {
+    public Blog save(BlogRequest request) {
         var book = Blog.builder()
                 .title(request.getTitle())
                 .image(request.getImage())
                 .description(request.getDescription())
-                .readtime(request.getReadtime())
+                .read_time(request.getRead_time() != null ? request.getRead_time() : 0)
                 .author(request.getAuthor())
-                .authorimage(request.getAuthorimage())
+                .author_image(request.getAuthor_image())
                 .date(request.getDate())
                 .tags(request.getTags())
                 .category(request.getCategory())
-                .section_content(request.getSection_content())
-                .section_title(request.getSection_title())
+
                 .build();
-        repository.save(book);
+        return repository.save(book);
     }
 
+    // Find all blogs
     public List<Blog> findAll() {
-        return repository.findAll();
+        return blogRepository.findAll();
     }
-    public Blog findById(int id){
-        Blog ans = new Blog();
-        List<Blog> All=findAll();
-        for (Blog blog : All) {
-            if (blog.getId() == id) {
-                ans=blog;
-                return blog;
-            }
+
+    // Find a blog by ID
+    public Blog findById(Integer id) {
+        return blogRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Blog", id));
+
+    }
+
+
+    // Update an existing blog
+    public Blog update(Integer id, BlogRequest request) {
+        Blog existingBlog = findById(id);
+        existingBlog.setTitle(request.getTitle());
+        existingBlog.setImage(request.getImage());
+        existingBlog.setDescription(request.getDescription());
+        existingBlog.setRead_time(request.getRead_time());
+        existingBlog.setAuthor(request.getAuthor());
+        existingBlog.setAuthor_image(request.getAuthor_image());
+        existingBlog.setDate(request.getDate());
+        existingBlog.setTags(request.getTags());
+        existingBlog.setCategory(request.getCategory());
+        return repository.save(existingBlog);
+    }
+
+    // Delete a blog by ID
+    public void deleteById(Integer id) {
+        if (!repository.existsById(id)) {
+            throw new ResourceNotFoundException("Blog" , id);
         }
-        return ans;
+        repository.deleteById(id);
     }
+
+    public Section addSectionToBlog(int blogId, SectionRequest request) {
+        Blog blog = findById(blogId);
+        Section section = Section.builder()
+                .section_title(request.getSection_title())
+                .section_content(request.getSection_content())
+                .blog(blog)
+                .build();
+        return sectionRepository.save(section);
+    }
+
+    public List<Section> findSectionsByBlogId(int blogId) {
+        return sectionRepository.findByBlogId(blogId);
+    }
+
+    public Section updateSection(int sectionId, SectionRequest request) {
+        Section section = sectionRepository.findById(sectionId)
+                .orElseThrow(() -> new ResourceNotFoundException("Section", sectionId));
+        section.setSection_title(request.getSection_title());
+        section.setSection_content(request.getSection_content());
+        return sectionRepository.save(section);
+    }
+
+    public void deleteSection(int sectionId) {
+        sectionRepository.deleteById(sectionId);
+    }
+
 
 }

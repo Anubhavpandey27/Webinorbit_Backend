@@ -1,15 +1,13 @@
 package com.webinorbit.security.blog;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.util.List;
 @Data
 @Builder
 @NoArgsConstructor
@@ -24,12 +22,16 @@ public class Blog {
     private String title;
     private String image;
     private String description;
-    private  int readtime;
+    private Integer read_time;
+
+
     private String author;
-    private String authorimage;
+    private String author_image;
     private String date;
     private String tags;
-    private  String category;
-    private String section_title;
-    private String section_content;
+    private String category;
+
+    // One blog can have multiple sections
+    @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Section> sections;
 }
