@@ -1,5 +1,6 @@
 package com.webinorbit.security.blog;
 
+import com.webinorbit.security.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,12 @@ public class BlogService {
                 .section_title(request.getSection_title())
                 .build();
         repository.save(book);
+
+        // Send a notification to the user (assuming you have a way to get the user)
+//        User user = getUserFromRequest(request);  // You need to implement this method to fetch the user
+//        if (user != null) {
+//            notificationService.createNotification("New blog post created: " + blog.getTitle(), user);
+//        }
     }
 
     public List<Blog> findAll() {
