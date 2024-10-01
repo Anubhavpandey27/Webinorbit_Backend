@@ -1,22 +1,10 @@
 package com.webinorbit.security.jobs;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Entity
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class Job {
-
-    @Id
-    private Long id;  // Manually set this ID
-
+public class JobResponse {
+    private Long id;
     private String companyName;
     private String companyLogo;
     private String jobType;
