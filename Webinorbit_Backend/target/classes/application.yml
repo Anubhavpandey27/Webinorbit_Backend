@@ -19,8 +19,8 @@ spring:
     password: abcdefgh
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: jdbc:postgresql://database-1.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
-    url: jdbc:postgresql://database-1.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
+      jdbc-url: jdbc:postgresql://database-2.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
+    url: jdbc:postgresql://database-2.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
   jpa:
     hibernate:
       ddl-auto: update
