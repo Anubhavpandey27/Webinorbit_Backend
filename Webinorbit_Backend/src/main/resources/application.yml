@@ -16,10 +16,10 @@ server:
 spring:
   datasource:
     username: username
-    password: password
+    password: passowrd
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: urll
+      jdbc-url: url
     url: url
   jpa:
     hibernate:

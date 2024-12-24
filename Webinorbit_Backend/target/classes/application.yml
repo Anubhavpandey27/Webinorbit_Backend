@@ -15,12 +15,12 @@ server:
       request-attributes-enabled: true
 spring:
   datasource:
-    username: arceus
-    password: abcdefgh
+    username: webinorbit_5fsd_user
+    password: Uw0775M4yQEl4SxZGaYHum5rIl5Twtas
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: jdbc:postgresql://database-2.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
-    url: jdbc:postgresql://database-2.cxuos00yubua.eu-north-1.rds.amazonaws.com:5432/webinorbit
+      jdbc-url: jdbc:postgresql://dpg-ctldm43qf0us73882r0g-a.singapore-postgres.render.com:5432/webinorbit_5fsd
+    url: jdbc:postgresql://dpg-ctldm43qf0us73882r0g-a.singapore-postgres.render.com:5432/webinorbit_5fsd
   jpa:
     hibernate:
       ddl-auto: update
