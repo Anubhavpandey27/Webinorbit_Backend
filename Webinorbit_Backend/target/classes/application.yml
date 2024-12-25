@@ -15,12 +15,12 @@ server:
       request-attributes-enabled: true
 spring:
   datasource:
-    username: webinorbit_5fsd_user
-    password: Uw0775M4yQEl4SxZGaYHum5rIl5Twtas
+    username: koyeb-adm
+    password: OyQM1qId7BEe
     driver-class-name: org.postgresql.Driver
     hikari:
-      jdbc-url: jdbc:postgresql://dpg-ctldm43qf0us73882r0g-a.singapore-postgres.render.com:5432/webinorbit_5fsd
-    url: jdbc:postgresql://dpg-ctldm43qf0us73882r0g-a.singapore-postgres.render.com:5432/webinorbit_5fsd
+      jdbc-url: jdbc:postgresql://ep-damp-shadow-a14jhbtw.ap-southeast-1.pg.koyeb.app/koyebdb
+    url: jdbc:postgresql://ep-damp-shadow-a14jhbtw.ap-southeast-1.pg.koyeb.app/koyebdb
   jpa:
     hibernate:
       ddl-auto: update

@@ -15,12 +15,12 @@ server:
       request-attributes-enabled: true
 spring:
   datasource:
-    username: username
-    password: passowrd
+    username: user
+    password: password
     driver-class-name: org.postgresql.Driver
     hikari:
       jdbc-url: url
-    url: url
+    url: password
   jpa:
     hibernate:
       ddl-auto: update
